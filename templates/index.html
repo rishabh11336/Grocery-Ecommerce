@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% block title %}HOME{% endblock %}
+  {% block main %}
+
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <center><img src="/static/image-2.jpg" class="d-block w-100" height="400px" alt="..."></center>
+          </div>
+          <div class="carousel-item">
+            <div class="row g-0 bg-body-secondary position-relative">
+              <div class="col-md-6 mb-md-0 p-md-4">
+                <img src="/static/image-3.jpg" class="w-100" alt="..." height="300px">
+              </div>
+              <div class="col-md-6 p-4 ps-md-0">
+                <h1 class="mt-0" style="padding:20% 15% 1%; font-family:Bradley Hand ITC;"><b>Home of Family essentials.</b></h>
+                <p><h3 align="center"><i>Can't find it anywhere?</i><br><br>You'll find it here...</h3></p>
+                <p><h3 align="center">Search no more for the best buys...</h3></p></h1>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <center><br><br>
+            <div class="p-3 mb-2 bg-warning text-dark" style="font-family:Cocktail Shaker;"><h1>Proud to serve you!</h1></div>
+            <img src="/static/image-4.png" class="d-block w-100" alt="..." height="300px">
+            <div class="p-3 mb-2 bg-warning-subtle text-emphasis-warning" style="font-family:Comic Sans MS;"><h3>Your friendly neighbourhood grocery...</h3></div>
+            </center>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <div style="font-family:Bradley Hand ITC;">
+          <center><h1><b>WELCOME...</b></h1>
+          <div class="text-bg-danger p-3" style="font-family:Algerian;">
+            <marquee width=100% height=20% behavior="scroll" style="border:dotted; color:rgb(55, 120, 55);" scrollamount="20" bgcolor="orange" ><h1>SHYAM GROCERY STORE</h1></marquee>
+          </div>
+            <p><h3>Find Everything you need, at a one place !!</h3></p>
+          </center>
+      </div>
+      <div class="container">
+        <center><h3><u>Recently Added</u></h3></center>
+      <div class="row row-cols-1 row-cols-md-4 g-4 my-2 mx-2">
+        {%for i in recent_products %}
+        <form action="/add_to_cart_to_home/{{i[0]}}", method="POST">
+            <div class="col" id="mv">
+            <div class="card" id="recent{{i[0]}}">
+                <a href='/product/{{i[0]}}'><img src="{{i[9]}}" height="225px" class="card-img-top" alt="{{i[1]}}"></a>
+                <div class="card-body">
+                <!-- <p class="card-title">id: {{i.id}}</p> -->
+                <p class="card-title" style="float:right;"><b>₹{{i[8]}}</b>/{{i[6]}}</p>
+                <p class="card-title"><b>{{i[1]}}</b></p>
+                <!-- <p class="card-title">category: {{i.category}}</p> -->
+                <p class="card-title" style="float:right;">{{i[2]}}</p>
+                <div class="col-md-3 col-lg-3 col-xl-2">
+                    <button class="btn btn-link px-2"
+                      onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                      <i class="fas fa-minus"></i>
+                    </button>
+          
+                    <input id="form1" min="0" name="quantity" value="1" type="number"
+                      class="form-control form-control-sm" />
+          
+                    <button class="btn btn-link px-2"
+                      onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <!-- <p class="card-title">mfg_date: {{i.mfg_date}}</p> -->
+                <input type="text" value="recent{{i[0]}}", name="htmlid" hidden />
+                <p class="card-title" style="float:left;">exp_date: {{i[5]}}</p>
+                <!-- <p class="card-title">unit: {{i.unit}}</p> -->
+                <!-- <p class="card-title">qty: {{i.qty}}</p> -->
+                <button type="submit" style="float:right;" class="btn btn-dark">Add to cart</button>
+                </div>
+            </div>
+            </div>
+        </form>
+        {% endfor %}
+    </div>
+    </div>
+    <div class="container">
+      {% for category in dict_of_all_category_products %}
+        <center><h3>{{ category }}</h3></center>
+        <div class="row row-cols-1 row-cols-md-4 g-4 my-2 mx-2">
+          {% for i in dict_of_all_category_products[category] %}
+          <form action="/add_to_cart_to_home/{{i[0]}}", method="POST">
+              <div class="col" id="mv">
+              <div class="card" id="{{ category }}{{i[0]}}">
+                  <a href='/product/{{i[0]}}'><img src="{{i[9]}}" height="225px" class="card-img-top" alt="{{i[1]}}"></a>
+                  <div class="card-body">
+                  <!-- <p class="card-title">id: {{i.id}}</p> -->
+                  <p class="card-title" style="float:right;"><b>₹{{i[8]}}</b>/{{i[6]}}</p>
+                  <p class="card-title"><b>{{i[1]}}</b></p>
+                  <!-- <p class="card-title">category: {{i.category}}</p> -->
+                  <p class="card-title" style="float:right;">{{i[2]}}</p>
+                  <div class="col-md-3 col-lg-3 col-xl-2">
+                      <button class="btn btn-link px-2"
+                        onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                        <i class="fas fa-minus"></i>
+                      </button>
+            
+                      <input id="form1" min="0" name="quantity" value="1" type="number"
+                        class="form-control form-control-sm" />
+            
+                      <button class="btn btn-link px-2"
+                        onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                        <i class="fas fa-plus"></i>
+                      </button>
+                  </div>
+                  <!-- <p class="card-title">mfg_date: {{i.mfg_date}}</p> -->
+                  <input type="text" value="{{ category }}{{ i[0] }}" name="htmlid" hidden />
+                  <p class="card-title" style="float:left;">exp_date: {{i[5]}}</p>
+                  <!-- <p class="card-title">unit: {{i.unit}}</p> -->
+                  <!-- <p class="card-title">qty: {{i.qty}}</p> -->
+                  <button type="submit" style="float:right;" class="btn btn-dark">Add to cart</button>
+                  </div>
+              </div>
+              </div>
+          </form>
+          {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  {% endblock %}
+    
+  
