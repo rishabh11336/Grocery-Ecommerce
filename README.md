@@ -67,20 +67,18 @@ PUT:- localhost:8080/product_api/{id}
 DELETE:- localhost:8080/product_api/{id}
 ```
 # Architecture and Features
-└── MAD-1-Project<br>
-&nbsp;&nbsp;&nbsp;&nbsp;├── 22f2000957Report.pdf<br>
-&nbsp;&nbsp;&nbsp;&nbsp;└── CODE<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── static<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── templates<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── admin.py<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── API.py<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── API.yaml<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── app.py<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── controller.py<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── database.sqlite3<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── model.py<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── requirements.txt<br>
+└── GROCERY-ECOMMERCE<br>
+&nbsp;&nbsp;&nbsp;&nbsp;├── static<br>
+&nbsp;&nbsp;&nbsp;&nbsp;├── templates<br>
+&nbsp;&nbsp;&nbsp;&nbsp;├── admin.py<br>
+&nbsp;&nbsp;&nbsp;&nbsp;├── API.py<br>
+&nbsp;&nbsp;&nbsp;&nbsp;├── API.yaml<br>
+&nbsp;&nbsp;&nbsp;&nbsp;├── app.py<br>
+&nbsp;&nbsp;&nbsp;&nbsp;├── controller.py<br>
+&nbsp;&nbsp;&nbsp;&nbsp;├── database.sqlite3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;├── model.py<br>
+&nbsp;&nbsp;&nbsp;&nbsp;├── requirements.txt<br>
 
 ### For testing purpose, use this email_id password:
-email_id: shivani@gmail.com<br>
+email_id: rishabh@gmail.com<br>
 password: 12345
