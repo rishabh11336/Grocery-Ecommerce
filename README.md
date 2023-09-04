@@ -1,4 +1,5 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/rishabh11336/Grocery-Ecommerce)
+![GitHub](https://img.shields.io/github/license/rishabh11336/Grocery-Ecommerce)
 
 # Grocery Store
 ## create virtual enviroment
